@@ -23,33 +23,51 @@ function lakukanLooping(arrPegawai) {
 
       Contoh: ["Aisyah Nirmala", "Mansur Faisal", ...]
   */
-  let hasilLooping = null;
-
+  let hasilLooping = [];
   /*
-    TODO 2: Buatlah sebuah variabel bernama "jumlahPria"
-      yang berisi jumlah pria dari masing masing pegawai
+  TODO 2: Buatlah sebuah variabel bernama "jumlahPria"
+  yang berisi jumlah pria dari masing masing pegawai
   */
-  let jumlahPria = null;
-
+  let jumlahPria = 0;
+  
   /*
-    TODO 3: Buatlah sebuah variabel bernama "jumlahWanita"
-      yang berisi jumlah wanita dari masing masing pegawai
-  */
-  let jumlahWanita = null;
+  TODO 3: Buatlah sebuah variabel bernama "jumlahWanita"
+  yang berisi jumlah wanita dari masing masing pegawai
+ */
+  let jumlahWanita = 0;
 
+  
   /*
-    TODO 4: Buatlah sebuah variabel bernama "komentar"
-      yang akan mengomentari apakah lebih banyak Pria atau Wanita
-      
-      Apabila Pria lebih banyak dari Wanita, maka komentar akan berisi:
-        "Jumlah Pria lebih banyak dari Wanita"
-      Apabila Wanita lebih banyak dari Pria, maka komentar akan berisi:
-        "Jumlah Wanita lebih banyak dari Pria"
-      Apabila imbang, maka komentar akan berisi:
-        "Jumlah Pria dan Wanita berimbang"
+  TODO 4: Buatlah sebuah variabel bernama "komentar"
+  yang akan mengomentari apakah lebih banyak Pria atau Wanita
+  
+  Apabila Pria lebih banyak dari Wanita, maka komentar akan berisi:
+  "Jumlah Pria lebih banyak dari Wanita"
+  Apabila Wanita lebih banyak dari Pria, maka komentar akan berisi:
+  "Jumlah Wanita lebih banyak dari Pria"
+  Apabila imbang, maka komentar akan berisi:
+  "Jumlah Pria dan Wanita berimbang"
   */
   let komentar = null;
 
+  dataYangAkanDilooping.forEach(element => {
+    let name = element.namaDepan + ' ' + element.namaBelakang
+    hasilLooping.push(name)
+    if (element.jenisKelamin === "M") {
+      jumlahPria++
+    } else {
+      jumlahWanita++
+    }
+  });
+
+  if (jumlahPria > jumlahWanita) {
+    komentar = "Jumlah Pria lebih banyak dari Wanita"
+  } else if (jumlahWanita > jumlahPria) {
+    komentar = "Jumlah Wanita lebih banyak dari Pria"
+  } else {
+    komentar = "Jumlah Pria dan Wanita berimbang"
+  }
+  
   // ! JANGAN DIMODIFIKASI
   return {
     hasilLooping,
